@@ -169,6 +169,10 @@ export class Storage {
     return this._dbPromise.then(db => db.getItem(key));
   }
 
+  getItem(key: string): Promise<any> {
+    return this.get(key);
+  }
+
   /**
    * Set the value for the given key.
    * @param {any} key the key to identify this value
@@ -177,6 +181,10 @@ export class Storage {
    */
   set(key: string, value: any): Promise<any> {
     return this._dbPromise.then(db => db.setItem(key, value));
+  }
+
+  setItem(key: string, value: any): Promise<any> {
+     return this.set(key, value);
   }
 
   /**
